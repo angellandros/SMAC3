@@ -144,7 +144,7 @@ class RandomForestWithInstances(AbstractEPM):
         self.rf = regression.binary_rss_forest()
         self.rf.options = self.rf_opts
         data = self.__init_data_container(self.X, self.y)
-        self.rf.fit(data)
+        self.rf.fit(data, self.rng)
         return self
 
     def __init_data_container(self, X: np.ndarray, y: np.ndarray):
